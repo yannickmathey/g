@@ -1,0 +1,4 @@
+# gfnt.ptf
+===========
+
+Prototypo gfnt
