@@ -1,4 +1,4 @@
-exports.glyphs['H_cap'] =
+exports.glyphs['H'] =
 	unicode: 'H'
 	glyphName: 'H'
 	characterName: 'LATIN CAPITAL LETTER H'
