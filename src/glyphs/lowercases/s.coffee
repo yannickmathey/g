@@ -133,8 +133,6 @@ exports.glyphs['s'] =
 					curveEnd: contours[0].nodes[5].expandedTo[1]
 					rotationAngle: 15
 					rotationCenter: contours[0].nodes[6].expandedTo[1].point
-			parentParameters:
-				serifRotate: serifRotate - 1
 		1:
 			base: ['serif-curve-inside-auto', 'none']
 			id: 'topbottom'
@@ -151,7 +149,6 @@ exports.glyphs['s'] =
 					inverseOrder: true
 					reversed: true
 			parentParameters:
-				serifRotate: serifRotate - 1
 				serifWidth: Math.min( ( 55 / 65 ) * serifWidth, serifWidth - 10 )
 				serifCurve: Math.max( serifCurve, 70 )
 		2:
@@ -168,8 +165,6 @@ exports.glyphs['s'] =
 					rotationCenter: contours[0].nodes[0].expandedTo[0].point
 					down: true
 					left: true
-			parentParameters:
-				serifRotate: serifRotate - 1
 		3:
 			base: ['serif-curve-inside-auto', 'none']
 			id: 'bottomtop'
@@ -185,7 +180,6 @@ exports.glyphs['s'] =
 					left: true
 					inverseOrder: true
 			parentParameters:
-				serifRotate: serifRotate - 1
 				serifHeight: Math.max( ( 62 / 50 ) * serifHeight, serifHeight + 12 )
 				serifCurve: Math.max( serifCurve, 50 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )

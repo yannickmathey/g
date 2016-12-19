@@ -383,9 +383,9 @@ exports.controls = [
 		min: 0
 		max: 2
 		step: 0.1
-		init: 1
-		minAdvised: 0.6
-		maxAdvised: 1.4
+		init: 0
+		minAdvised: 0
+		maxAdvised: 1
 		disabled: false
 		demo: false
 	,
