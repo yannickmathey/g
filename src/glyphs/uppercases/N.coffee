@@ -69,7 +69,7 @@ exports.glyphs['N'] =
 			skeleton: true
 			closed: false
 			nodes:
-				# TODO: contrast 
+				# TODO: contrast
 				0:
 					x: contours[0].nodes[1].expandedTo[0].x
 					y: contours[0].nodes[1].expandedTo[0].y - ( 60 / 80 ) * thickness * opticThickness
