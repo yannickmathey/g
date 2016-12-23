@@ -75,7 +75,7 @@ exports.glyphs['Q'] =
 			nodes:
 				0:
 					x: contours[1].nodes[1].x + ( 65 / 80 ) * thickness * opticThickness
-					y: contours[1].nodes[1].y
+					y: contours[1].nodes[1].expandedTo[1].y
 					dirOut: - 150 + 'deg'
 					expand: Object({
 						width: ( 15 / 80 ) * thickness * opticThickness * contrast
@@ -83,19 +83,19 @@ exports.glyphs['Q'] =
 						distr: 0.4
 					})
 				1:
-					x: contours[0].nodes[2].expandedTo[0].x + 5 * width
-					y: ( 115 / 250 ) * descender
+					x: contours[0].nodes[2].expandedTo[0].x + 5 * width - (20)
+					y: ( 115 / 250 ) * descender - (12)
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: ( 70 / 80 ) * thickness * opticThickness
 						angle: 180 - 152 + 'deg'
-						distr: 1
+						distr: 0.65
 					})
 				2:
 					x: contours[0].nodes[3].x
 					y: contours[0].nodes[3].expandedTo[0].y + ( contours[0].nodes[3].expandedTo[1].y - contours[0].nodes[3].expandedTo[0].y ) * 0.5
-					dirIn: Math.max( - 90, ( 40 / 250 ) * descender ) + 'deg'
+					dirIn: Math.max( - 90, ( 45 / 250 ) * descender ) + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: Math.min( thickness * opticThickness * contrast + 55, ( 135 / 80 ) * thickness * opticThickness * contrast )
