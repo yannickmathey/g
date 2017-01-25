@@ -74,7 +74,7 @@ exports.glyphs['Q'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[1].x + ( 65 / 80 ) * thickness * opticThickness
+					x: contours[1].nodes[1].x + ( 65 / 80 ) * thickness * opticThickness + (20)
 					y: contours[1].nodes[1].expandedTo[1].y
 					dirOut: - 150 + 'deg'
 					expand: Object({
