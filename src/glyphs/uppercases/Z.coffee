@@ -97,7 +97,10 @@ exports.glyphs['Z'] =
 					typeOut: 'line'
 					expand: Object({
 						width: ( 80 / 80 ) * thickness * opticThickness
-						angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ) - Math.PI / 2
+						angle: Math.max(
+							Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ) - Math.PI / 2,
+							- Math.asin( (( 55 / 80 ) * thickness * opticThickness * contrast) / (( 80 / 80 ) * thickness * opticThickness))
+						)
 						distr: 0
 					})
 				1:
@@ -105,7 +108,10 @@ exports.glyphs['Z'] =
 					y: contours[1].nodes[1].expandedTo[1].y
 					expand: Object({
 						width: ( 80 / 80 ) * thickness * opticThickness
-						angle: Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ) - Math.PI / 2
+						angle: Math.max(
+							Utils.lineAngle( contours[0].nodes[1].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ) - Math.PI / 2,
+							- Math.asin( (( 55 / 80 ) * thickness * opticThickness * contrast) / (( 80 / 80 ) * thickness * opticThickness))
+						)
 						distr: 1
 					})
 	components:
