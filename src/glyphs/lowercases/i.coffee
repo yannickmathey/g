@@ -21,13 +21,13 @@ exports.glyphs['i'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + (20/80) * thickness
+					x: spacingLeft + (40/80) * thickness
 					y: Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
 						angle: 0 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 				1:
 					x: contours[0].nodes[0].x
@@ -35,7 +35,7 @@ exports.glyphs['i'] =
 					expand: Object({
 						width: thickness
 						angle: 0 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 	components:
 		0:
