@@ -1,3 +1,4 @@
+# TODO: width and oblics — see x.coffee
 # TODO: thickness, contrast, width…
 exports.glyphs['W'] =
 	unicode: 'W'

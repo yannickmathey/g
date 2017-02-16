@@ -1,3 +1,4 @@
+# TODO: width and oblics — see x.coffee
 exports.glyphs['Y'] =
 	unicode: 'Y'
 	glyphName: 'Y'

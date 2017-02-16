@@ -1,3 +1,4 @@
+# TODO: apex not in the middle when extra width — it does only with extrem contrast
 exports.glyphs['v'] =
 	unicode: 'v'
 	glyphName: 'v'

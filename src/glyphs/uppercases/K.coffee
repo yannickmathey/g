@@ -1,4 +1,5 @@
-# TODO: width and oblic stems
+# TODO: width and oblics — see x.coffee
+# TODO: something wrong with one of the serifs
 exports.glyphs['K'] =
 	unicode: 'K'
 	glyphName: 'K'
