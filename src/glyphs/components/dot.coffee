@@ -21,14 +21,14 @@ exports.glyphs['dot'] =
 						40,
 						Math.min(
 							160,
-							thickness * ( 130 / 90 )
+							thickness * ( 120 / 80 )
 						)
 					) / 2
 					y: anchors[0].y + Math.max(
 						40,
 						Math.min(
 							160,
-							thickness * ( 130 / 90 )
+							thickness * ( 120 / 80 )
 						)
 					) / 2
 					dirOut: 90 + 'deg'
@@ -39,7 +39,7 @@ exports.glyphs['dot'] =
 						40,
 						Math.min(
 							160,
-							thickness * ( 130 / 90 )
+							thickness * ( 120 / 80 )
 						)
 					)
 					dirOut: 0 + 'deg'
@@ -49,14 +49,14 @@ exports.glyphs['dot'] =
 						40,
 						Math.min(
 							160,
-							thickness * ( 130 / 90 )
+							thickness * ( 120 / 80 )
 						)
 					) / 2
 					y: anchors[0].y + Math.max(
 						40,
 						Math.min(
 							160,
-							thickness * ( 130 / 90 )
+							thickness * ( 120 / 80 )
 						)
 					) / 2
 					dirOut: - 90 + 'deg'
