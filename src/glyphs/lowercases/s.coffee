@@ -17,8 +17,8 @@ exports.glyphs['s'] =
 	]
 	anchors:
 		0:
-			x: 0
-			y: 0
+			x: contours[0].nodes[5].expandedTo[0].x
+			y: xHeight + diacriticHeight
 	contours:
 		0:
 			skeleton: true
