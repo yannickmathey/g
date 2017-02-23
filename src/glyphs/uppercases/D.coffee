@@ -18,7 +18,7 @@ exports.glyphs['D'] =
 	anchors:
 		0:
 			x: 0
-			y: 0
+			y: capHeight + ( 45 / 80 ) * diacriticHeight
 	contours:
 		0:
 			skeleton: true

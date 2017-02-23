@@ -17,8 +17,8 @@ exports.glyphs['I'] =
 	]
 	anchors:
 		0:
-			x: 0
-			y: 0
+			x: contours[0].nodes[0].x
+			y: capHeight + ( 45 / 80 ) * diacriticHeight
 	contours:
 		0:
 			skeleton: true
