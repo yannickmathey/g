@@ -49,7 +49,7 @@ exports.glyphs['O'] =
 				2:
 					x: Math.max(
 						contours[0].nodes[0].expandedTo[0].x + 465 + 200 * width - (22),
-						contours[0].nodes[0].expandedTo[1].x + 0.25 * ( 102 / 80 ) * thickness * opticThickness + 10
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 102 / 80 ) * thickness * opticThickness + 10
 					)
 					y: contours[0].nodes[0].expandedTo[0].y - (9)
 					dirOut: - 90 + 'deg'

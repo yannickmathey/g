@@ -48,9 +48,9 @@ exports.glyphs['o'] =
 					})
 				2:
 					x: Math.max(
-						contours[0].nodes[0].expandedTo[0].x + 240 + 200 * width,
-						contours[0].nodes[0].expandedTo[1].x + 0.25 * ( 92 / 80 ) * thickness + 10
-					) - (25)
+						contours[0].nodes[0].expandedTo[0].x + 240 + 200 * width - (25),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 92 / 80 ) * thickness + 10
+					)
 					y: contours[0].nodes[0].y
 					dirOut: - 90 + 'deg'
 					type: 'smooth'

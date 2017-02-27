@@ -4,7 +4,7 @@ exports.glyphs['tilde'] =
 	anchors:
 		0:
 			x: parentAnchors[0].x
-			y: parentAnchors[0].y + 60
+			y: parentAnchors[0].y
 	tags: [
 		'component',
 		'diacritic'
@@ -15,40 +15,42 @@ exports.glyphs['tilde'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[0].x - 140 * width - (4)
+					x: anchors[0].x - 67 - 85 * width + (3)
 					y: anchors[0].y
-					dirOut: 90 + 'deg'
+					dirOut: 72 + 'deg'
 					expand: Object({
-						width: thickness * ( 15 / 90 ) * contrast
-						angle: 180 + 'deg'
-						distr: 0.25
-					})
-				1:
-					x: anchors[0].x - 90 * width - (4)
-					y: anchors[0].y + 60 + (15)
-					dirOut: 0 + 'deg'
-					type: 'smooth'
-					expand: Object({
-						width: thickness * ( 63 / 90 )
-						angle: 72 + 'deg'
-						distr: 0.25
-					})
-				2:
-					x: contours[0].nodes[3].expandedTo[0].x - ( contours[0].nodes[1].expandedTo[1].x - contours[0].nodes[0].expandedTo[1].x )
-					y: anchors[0].y - overshoot / 2 + (15)
-					dirOut: 0 + 'deg'
-					type: 'smooth'
-					expand: Object({
-						width: thickness * ( 63 / 90 )
-						angle: 72 + 'deg'
-						distr: 0.25
-					})
-				3:
-					x: anchors[0].x + 140 * width + (4)
-					y: contours[0].nodes[1].expandedTo[1].y - overshoot / 2
-					dirOut: 90 + 'deg'
-					expand: Object({
-						width: thickness * ( 15 / 90 ) * contrast
+						width: ( 13 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 180 + 'deg'
 						distr: 0.75
+					})
+				1:
+					x: contours[0].nodes[0].expandedTo[1].x + ( contours[0].nodes[3].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * ( 95 / 305 ) - (9/80) * thickness
+					y: contours[0].nodes[3].y - (25)
+					dirOut: 0 + 'deg'
+					type: 'smooth'
+					tensionIn: 1.5
+					expand: Object({
+						width: ( 63 / 80 ) * thickness
+						angle: 180 - 90 - 22 + 'deg'
+						distr: 0.6
+					})
+				2:
+					x: contours[0].nodes[3].expandedTo[0].x - ( contours[0].nodes[3].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * ( 95 / 305 ) + (9/80) * thickness
+					y: contours[0].nodes[0].y + (23)
+					dirOut: 0 + 'deg'
+					type: 'smooth'
+					tensionOut: 1.5
+					expand: Object({
+						width: ( 63 / 80 ) * thickness
+						angle: 180 - 90 - 22 + 'deg'
+						distr: 0.4
+					})
+				3:
+					x: anchors[0].x + 67 + 85 * width - (3)
+					y: contours[0].nodes[0].expandedTo[0].y + 100 + Math.min( 25, ( 25 / 80 ) * thickness )
+					dirIn: - 90 - 18 + 'deg'
+					expand: Object({
+						width: ( 13 / 80 ) * thickness * contrast * contrastExtremity
+						angle: 180 + 'deg'
+						distr: 0.25
 					})
