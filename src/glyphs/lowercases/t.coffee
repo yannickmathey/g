@@ -15,10 +15,13 @@ exports.glyphs['t'] =
 		'latin',
 		'lowercase'
 	]
-	# anchors:
-	# 	0:
-	# 		x: contours[1].nodes[0].expandedTo[1].x + 50
-	# 		y: ascenderHeight + diacriticHeight
+	anchors:
+		0:
+			x: Math.max(
+				contours[1].nodes[4].expandedTo[1].x + thickness + 90 + (20),
+				contours[0].nodes[2].expandedTo[0].x - 35
+			)
+			y: ascenderHeight
 	contours:
 		0:
 			skeleton: true

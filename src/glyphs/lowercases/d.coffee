@@ -18,8 +18,8 @@ exports.glyphs['d'] =
 	]
 	anchors:
 		0:
-			x: 0
-			y: 0
+			x: contours[0].nodes[2].expandedTo[1].x + thickness + 90 + (20)
+			y: ascenderHeight
 	contours:
 		0:
 			skeleton: true

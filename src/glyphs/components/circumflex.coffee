@@ -15,7 +15,7 @@ exports.glyphs['circumflex'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[0].x - Math.min(15, ( 15 / 80 ) * thickness )
+					x: anchors[0].x - Math.min(15, ( 15 / 80 ) * thickness * contrast )
 					y: anchors[0].y + 180 - (5)
 					typeOut: 'line'
 					expand: Object({
@@ -27,7 +27,7 @@ exports.glyphs['circumflex'] =
 					x: anchors[0].x - 100 - ( 20 + (20 / 80 * thickness ) ) * width
 					y: anchors[0].y
 					expand: Object({
-						width: ( 12 / 80 ) * thickness
+						width: ( 12 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -40,12 +40,12 @@ exports.glyphs['circumflex'] =
 					y: anchors[0].y
 					typeOut: 'line'
 					expand: Object({
-						width: ( 12 / 80 ) * thickness
+						width: ( 12 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 180 + 'deg'
 						distr: 0.25
 					})
 				1:
-					x: anchors[0].x + Math.min(15, ( 15 / 80 ) * thickness )
+					x: anchors[0].x + Math.min(15, ( 15 / 80 ) * thickness * contrast )
 					y: contours[0].nodes[0].y
 					expand: Object({
 						width: ( 77 / 80 ) * thickness * Math.min( 1, Math.sqrt( 80 / thickness ) )

@@ -1,8 +1,8 @@
-exports.glyphs['l_caron'] =
-	unicode: 'ľ'
-	glyphName: 'lcaron'
-	characterName: 'LATIN SMALL LETTER L WITH CARON'
-	base: 'l'
+exports.glyphs['d_caron'] =
+	unicode: 'ď'
+	glyphName: 'dcaron'
+	characterName: 'LATIN SMALL LETTER D WITH CARON'
+	base: 'd'
 	advanceWidth: base.advanceWidth
 	tags: [
 		'all',
@@ -16,5 +16,5 @@ exports.glyphs['l_caron'] =
 			copy: true
 			parentAnchors:
 				0:
-					x: anchors[1].x
-					y: anchors[1].y
+					x: anchors[0].x
+					y: anchors[0].y
