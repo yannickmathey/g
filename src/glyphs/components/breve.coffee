@@ -4,7 +4,7 @@ exports.glyphs['breve'] =
 	anchors:
 		0:
 			x: parentAnchors[0].x
-			y: parentAnchors[0].y + 70
+			y: parentAnchors[0].y
 	tags: [
 		'component',
 		'diacritic'
@@ -15,30 +15,37 @@ exports.glyphs['breve'] =
 			closed: false
 			nodes:
 				0:
-					x: anchors[0].x - 102 * width - ( 20 / 90 ) * thickness
-					y: anchors[0].y + 107
-					dirOut: ( - 90 + ( 18 / 90 ) * thickness ) * Math.PI / 180
+					x: anchors[0].x - 126 * width - ( 20 / 80 ) * thickness
+					y: Math.min(
+						contours[0].nodes[1].expandedTo[0].y + 100,
+						contours[0].nodes[1].expandedTo[1].y + ( 157 + ( 10 / 80 ) * thickness )
+					)
+					dirOut: - 90 + Math.max( 0, Math.min( 25, 18 * width ) ) + 'deg'
+					tensionOut: 1.2
 					expand: Object({
-						width: thickness * ( 16 / 90 )
-						angle: contours[0].nodes[0].dirOut + Math.PI / 2
-						distr: 0.25
+						width: ( 14 / 80 ) * thickness * contrast * contrastExtremity
+						angle: 180 + 'deg'
+						distr: 0.75
 					})
 				1:
 					x: anchors[0].x
-					y: anchors[0].y + 33 - overshoot
+					y: anchors[0].y + 30
 					dirOut: 0 + 'deg'
 					type: 'smooth'
+					tensionIn: 1.2
+					tensionOut: 1.2
 					expand: Object({
-						width: thickness * ( 60 / 90 )
-						angle: 90 + 'deg'
-						distr: 0.75
+						width: ( 67 / 80 ) * thickness
+						angle: 180 + 90 + 'deg'
+						distr: 1
 					})
 				2:
 					x: anchors[0].x + ( anchors[0].x - contours[0].nodes[0].expandedTo[1].x )
 					y: contours[0].nodes[0].expandedTo[1].y
-					dirIn: ( - 90 - ( 18 / 90 ) * thickness ) * Math.PI / 180
+					dirIn: - 90 - Math.max( 0, Math.min( 25, 18 * width ) ) + 'deg'
+					tensionIn: 1.2
 					expand: Object({
-						width: thickness * ( 16 / 90 )
-						angle: contours[0].nodes[2].dirIn - Math.PI / 2
+						width: ( 14 / 80 ) * thickness * contrast * contrastExtremity
+						angle: 0 + 'deg'
 						distr: 1
 					})

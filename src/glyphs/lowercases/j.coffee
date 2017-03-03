@@ -69,7 +69,7 @@ exports.glyphs['j'] =
 				serifHeight: Math.min( ( 85 / 50 ) * serifHeight, serifHeight + 35 )
 				serifMedian: Math.max( ( 0.20 ) * serifMedian, serifMedian - 0.8 )
 		1:
-			base: 'dot_accent'
+			base: 'dotaccent'
 			parentAnchors:
 				0:
 					x: contours[0].nodes[1].x

@@ -11,7 +11,7 @@ exports.glyphs['dieresis'] =
 	]
 	components:
 		0:
-			base: 'dot_accent'
+			base: 'dotaccent'
 			parentAnchors:
 				0:
 					x: anchors[0].x - ( 100 / 2 ) - Math.max(
@@ -23,7 +23,7 @@ exports.glyphs['dieresis'] =
 					) / 2
 					y: anchors[0].y
 		1:
-			base: 'dot_accent'
+			base: 'dotaccent'
 			parentAnchors:
 				0:
 					x: anchors[0].x + ( 100 / 2 ) + Math.max(
