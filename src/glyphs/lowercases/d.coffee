@@ -63,7 +63,7 @@ exports.glyphs['d'] =
 			nodes:
 				0:
 					x: contours[0].nodes[2].expandedTo[0].x + ( 10 / 80 ) * thickness
-					y: ( 65 / 450 ) * xHeight
+					y: Math.min( 65, ( 65 / 450 ) * xHeight )
 					dirOut: - 140 + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -83,7 +83,7 @@ exports.glyphs['d'] =
 					})
 				2:
 					x: spacingLeft + (20/80) * thickness
-					y: 194 + (6)
+					y: contours[1].nodes[1].y + ( contours[1].nodes[3].y - contours[1].nodes[1].y ) * ( 204 / 470 ) + (6)
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({

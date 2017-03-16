@@ -100,7 +100,7 @@ exports.glyphs['a'] =
 			nodes:
 				0:
 					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[2].expandedTo[1].x ) * ( 18 / 80 )
-					y: 70 + (9)
+					y: Math.min( 70, ( 70 / 450 ) * xHeight ) + (9)
 					dirOut: - 130 + 'deg'
 					tensionOut: 1.1
 					expand: Object({
