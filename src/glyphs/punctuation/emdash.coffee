@@ -1,15 +1,15 @@
-exports.glyphs['underscore'] =
-	unicode: '_'
-	glyphName: 'underscore'
-	characterName: 'LOW LINE'
+exports.glyphs['emdash'] =
+	unicode: '—'
+	glyphName: 'emdash'
+	characterName: 'EM DASH'
 	ot:
 		advanceWidth: contours[0].nodes[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 25
-		spacingRight: 50 * spacing + 25
+		spacingLeft: 50 * spacing + 50
+		spacingRight: 50 * spacing + 50
 	tags: [
 		'all',
 		'latin',
@@ -22,21 +22,18 @@ exports.glyphs['underscore'] =
 			nodes:
 				0:
 					x: spacingLeft
-					y: - 90 - (10)
-					dirOut: 90 + 'deg'
+					y: xHeight * ( 297 / 500 ) * crossbar
 					typeOut: 'line'
 					expand: Object({
 						width: ( 50 / 80 ) * thickness
-						angle: - 90 + 'deg'
-						distr: 0.2
+						angle: 90 + 'deg'
+						distr: 0.5
 					})
 				1:
-					x: contours[0].nodes[0].x + 250 + 200 * width
+					x: contours[0].nodes[0].x + 700 + 200 * width
 					y: contours[0].nodes[0].y
-					dirOut: 90 + 'deg'
-					typeOut: 'line'
 					expand: Object({
 						width: ( 50 / 80 ) * thickness
-						angle: - 90 + 'deg'
-						distr: 0.2
+						angle: 90 + 'deg'
+						distr: 0.5
 					})
