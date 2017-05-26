@@ -2,7 +2,7 @@ exports.glyphs['D_sc'] =
 	unicode: 'ᴅ'
 	glyphName: 'dsmall'
 	characterName: 'LATIN LETTER SMALL CAPITAL D'
-	base: 'D_cap'
+	base: 'D'
 	advanceWidth: base.advanceWidth
 	transforms: Array(
 		['skewX', slant + 'deg']

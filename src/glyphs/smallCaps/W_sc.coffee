@@ -2,7 +2,7 @@ exports.glyphs['W_sc'] =
 	unicode: 'ᴡ'
 	glyphName: 'wsmall'
 	characterName: 'LATIN LETTER SMALL CAPITAL W'
-	base: 'W_cap'
+	base: 'W'
 	advanceWidth: base.advanceWidth
 	transforms: Array(
 		['skewX', slant + 'deg']

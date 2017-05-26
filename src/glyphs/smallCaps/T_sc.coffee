@@ -2,7 +2,7 @@ exports.glyphs['T_sc'] =
 	unicode: 'ᴛ'
 	glyphName: 'tsmall'
 	characterName: 'LATIN LETTER SMALL CAPITAL T'
-	base: 'T_cap'
+	base: 'T'
 	advanceWidth: base.advanceWidth
 	transforms: Array(
 		['skewX', slant + 'deg']

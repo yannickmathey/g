@@ -2,7 +2,7 @@ exports.glyphs['Q_sc'] =
 	unicode: 'ǫ'
 	glyphName: 'qsmall'
 	characterName: 'LATIN LETTER SMALL CAPITAL Q'
-	base: 'Q_cap'
+	base: 'Q'
 	advanceWidth: base.advanceWidth
 	transforms: Array(
 		['skewX', slant + 'deg']

@@ -38,7 +38,7 @@ exports.glyphs['A'] =
 					x: contours[0].nodes[0].expandedTo[0].x + ( ( contours[1].nodes[1].expandedTo[1].x + ( contours[1].nodes[1].expandedTo[0].x - contours[1].nodes[1].expandedTo[1].x ) * 0.5 ) - contours[0].nodes[0].expandedTo[0].x ) * 0.5
 					y: capHeight + overshoot / 2
 					expand: Object({
-						width: (55 / 80 ) * thickness * opticThickness * contrast
+						width: ( 55 / 80 ) * thickness * opticThickness * contrast
 						angle: Utils.lineAngle( contours[0].nodes[0].expandedTo[0].point, contours[0].nodes[1].point ) - Math.PI / 2
 						distr: 0
 					})

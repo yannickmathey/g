@@ -2,7 +2,7 @@ exports.glyphs['J_sc'] =
 	unicode: 'ᴊ'
 	glyphName: 'jsmall'
 	characterName: 'LATIN LETTER SMALL CAPITAL J'
-	base: 'J_cap'
+	base: 'J'
 	advanceWidth: base.advanceWidth
 	transforms: Array(
 		['skewX', slant + 'deg']
