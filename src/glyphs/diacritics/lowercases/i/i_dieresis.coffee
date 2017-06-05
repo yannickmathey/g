@@ -1,5 +1,5 @@
 exports.glyphs['i_dieresis'] =
-	unicode: 'î'
+	unicode: 'ï'
 	glyphName: 'idieresis'
 	characterName: 'LATIN SMALL LETTER I WITH DIAERESIS'
 	base: 'ı'
