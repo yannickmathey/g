@@ -35,7 +35,7 @@ exports.glyphs['T'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].x + 385 + 200 * width
+					x: contours[0].nodes[0].x + 385 + 200 * width + Math.max( 0, ( 20 / 80 ) * thickness - 20 )
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({

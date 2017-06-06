@@ -27,7 +27,7 @@ exports.glyphs['z'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 135 + 200 * width
+					x: spacingLeft + 135 + 200 * width + Math.max( 0, ( 20 / 80 ) * thickness - 20 )
 					y: 0
 					typeOut: 'line'
 					expand: Object({

@@ -229,27 +229,27 @@ exports.glyphs['m'] =
 			parentParameters:
 				serifHeight: Math.min( ( 85 / 50 ) * serifHeight, serifHeight + 35 )
 				serifMedian: Math.max( ( 0.20 ) * serifMedian, serifMedian - 0.8 )
-		7:
-			base: ['inktrap', 'none']
-			id: 'inktrap'
-			parentAnchors:
-				0:
-					x: contours[1].nodes[3].x
-					y: contours[1].nodes[3].y
-					noneAnchor: contours[1].nodes[3].point
-			transformOrigin: contours[1].nodes[3].point
-			transforms: Array(
-				[ 'scale', inktrap ]
-			)
-		8:
-			base: ['inktrap', 'none']
-			id: 'inktrap2'
-			parentAnchors:
-				0:
-					x: contours[2].nodes[3].x
-					y: contours[2].nodes[3].y
-					noneAnchor: contours[2].nodes[3].point
-			transformOrigin: contours[2].nodes[3].point
-			transforms: Array(
-				[ 'scale', inktrap ]
-			)
+		# 7:
+		# 	base: ['inktrap', 'none']
+		# 	id: 'inktrap'
+		# 	parentAnchors:
+		# 		0:
+		# 			x: contours[1].nodes[3].x
+		# 			y: contours[1].nodes[3].y
+		# 			noneAnchor: contours[1].nodes[3].point
+		# 	transformOrigin: contours[1].nodes[3].point
+		# 	transforms: Array(
+		# 		[ 'scale', inktrap ]
+		# 	)
+		# 8:
+		# 	base: ['inktrap', 'none']
+		# 	id: 'inktrap2'
+		# 	parentAnchors:
+		# 		0:
+		# 			x: contours[2].nodes[3].x
+		# 			y: contours[2].nodes[3].y
+		# 			noneAnchor: contours[2].nodes[3].point
+		# 	transformOrigin: contours[2].nodes[3].point
+		# 	transforms: Array(
+		# 		[ 'scale', inktrap ]
+		# 	)

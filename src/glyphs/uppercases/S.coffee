@@ -26,11 +26,24 @@ exports.glyphs['S'] =
 			nodes:
 				0:
 					x: spacingLeft + (4)
-					y: 35 + (7)
-					dirOut: - 30 + 'deg'
+					y: Math.max(
+						35 + (7) + ( 150 * aperture * apertureBottom - 150 ),
+						0
+					)
+					dirOut: Math.min(
+						contours[0].nodes[0].expand.angle - Math.PI / 2,
+						Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[0].point )
+					)
 					expand: Object({
 						width: ( 75 / 80 ) * thickness * opticThickness
-						angle: 55 + 'deg'
+						# angle: 55 + 'deg'
+						angle: Math.min(
+							Math.max(
+								55 - ( 50 * aperture * apertureBottom - 50 ),
+								0 - 10
+							),
+							90
+						) / 180 * Math.PI
 						distr: 0.1
 					})
 				1:
@@ -102,7 +115,7 @@ exports.glyphs['S'] =
 						distr: 0.75
 					})
 				5:
-					x: contours[0].nodes[4].expandedTo[1].x + ( contours[0].nodes[6].expandedTo[0].x - contours[0].nodes[4].expandedTo[1].x ) * 0.55
+					x: contours[0].nodes[4].expandedTo[1].x + ( contours[0].nodes[6].expandedTo[1].x - contours[0].nodes[4].expandedTo[1].x ) * 0.55
 					y: capHeight + overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
@@ -112,12 +125,24 @@ exports.glyphs['S'] =
 						distr: 1
 					})
 				6:
-					x: contours[0].nodes[2].x - (9)
-					y: capHeight - 35 - (4)
-					dirIn: 140 + 'deg'
+					x: contours[0].nodes[2].expandedTo[0].x - 31 - (9)
+					y: Math.min(
+						capHeight - 35 - (4) - ( 150 * aperture * apertureTop - 150 ),
+						capHeight
+					)
+					dirIn: Math.min(
+						contours[0].nodes[6].expand.angle + Math.PI / 2,
+						Utils.lineAngle( contours[0].nodes[6].expandedTo[0].point, contours[0].nodes[5].expandedTo[1].point )
+					)
 					expand: Object({
 						width: ( 70 / 80 ) * thickness * opticThickness
-						angle: 180 - 91 + 'deg'
+						angle: Math.min(
+							Math.max(
+								55 - ( 50 * aperture * apertureTop - 50 ),
+								0 - 10
+							),
+							90
+						) / 180 * Math.PI
 						distr: 0.9
 					})
 	components:

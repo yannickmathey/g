@@ -105,7 +105,10 @@ exports.glyphs['q'] =
 					type: 'smooth'
 					expand: Object({
 						width: ( 87 / 80 ) * thickness * contrast * contrastExtremity
-						angle: - 120 + 'deg'
+						angle: Math.min(
+							- 120 + ( ( 20 / 80 ) * thickness - 20 ),
+							- 90
+						) + 'deg'
 						distr: 0
 					})
 	components:

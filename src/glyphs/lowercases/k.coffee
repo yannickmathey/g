@@ -70,7 +70,8 @@ exports.glyphs['k'] =
 					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
-						width: thickness / Math.cos( Math.PI / 2 - Utils.lineAngle( contours[2].nodes[1].point, contours[2].nodes[0].point ) ) # * Math.sqrt( width )
+						# width: thickness / Math.cos( Math.PI / 2 - Utils.lineAngle( contours[2].nodes[1].point, contours[2].nodes[0].point ) ) # * Math.sqrt( width )
+						width: ( ( 77 / 80 ) * thickness ) / Math.cos( Utils.lineAngle( contours[2].nodes[0].point, contours[2].nodes[1].point ) + Math.PI / 2 )
 						angle: 180 + 'deg'
 						distr: 0
 					})

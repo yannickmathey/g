@@ -51,7 +51,7 @@ exports.glyphs['F'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[0].x + 200 + 200 * width
+					x: contours[0].nodes[0].expandedTo[0].x + 200 + 200 * width + Math.max( 0, ( 20 / 80 ) * thickness - 20 )
 					y: contours[1].nodes[0].expandedTo[0].y
 					expand: Object({
 						width: ( 55 / 80 ) * thickness * opticThickness * contrast
@@ -72,7 +72,7 @@ exports.glyphs['F'] =
 						distr: 0.5
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[0].x + 125 + 200 * width
+					x: contours[0].nodes[0].expandedTo[0].x + 125 + 200 * width + Math.max( 0, ( 20 / 80 ) * thickness - 20 )
 					y: contours[2].nodes[0].y
 					expand: Object({
 						width: ( 55 / 80 ) * thickness * opticThickness * contrast

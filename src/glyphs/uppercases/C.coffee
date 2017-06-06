@@ -1,3 +1,4 @@
+# TODO: aperture (everywhere)
 exports.glyphs['C'] =
 	unicode: 'C'
 	glyphName: 'C'
@@ -29,11 +30,23 @@ exports.glyphs['C'] =
 						contours[0].nodes[2].expandedTo[0].x + 350 + 200 * width - (7),
 						contours[0].nodes[2].expandedTo[1].x + 0.25 * ( 74 / 80 ) * thickness + 10
 					)
-					y: capHeight - 42
-					dirOut: 150 + 'deg'
+					y: Math.min(
+						capHeight - 42 - ( 150 * aperture * apertureTop - 150 ),
+						capHeight
+					)
+					dirOut: Math.min(
+						contours[0].nodes[0].expand.angle + Math.PI + Math.PI / 2,
+						Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[0].point )
+					)
 					expand: Object({
 						width: ( 75 / 80 ) * thickness * opticThickness * contrast * contrastExtremity
-						angle: - 130 + 'deg'
+						angle: Math.min(
+							Math.max(
+								- 130 - ( 50 * aperture * apertureTop - 50 ),
+								- 180 - 10
+							),
+							- 90
+						) / 180 * Math.PI
 						distr: 0.1
 					})
 				1:
@@ -68,12 +81,23 @@ exports.glyphs['C'] =
 					})
 				4:
 					x: contours[0].nodes[0].expandedTo[0].x + 5
-					y: 45
-					dirIn: - 155 + 'deg'
-					type: 'smooth'
+					y: Math.max(
+						45 + ( 150 * aperture * apertureBottom - 150 ),
+						0
+					)
+					dirIn: Math.max(
+						contours[0].nodes[4].expand.angle - Math.PI / 2,
+						Math.PI + Utils.lineAngle( contours[0].nodes[4].expandedTo[1].point, contours[0].nodes[3].expandedTo[0].point )
+					)
 					expand: Object({
 						width: ( 70 / 80 ) * thickness * opticThickness * contrast * contrastExtremity
-						angle: 125 + 'deg'
+						angle: Math.max(
+							Math.min(
+								125 + ( 50 * aperture * apertureBottom - 50 ),
+								180 + 10
+							),
+							90
+						) / 180 * Math.PI
 						distr: 0.1
 					})
 	components:

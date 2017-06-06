@@ -54,6 +54,7 @@ exports.glyphs['B_cap'] =
 					x: contours[1].nodes[0].x + ( contours[1].nodes[2].expandedTo[0].x - contours[1].nodes[0].x ) * ( 145 / 367 )
 					y: contours[0].nodes[1].y
 					dirOut: 0 + 'deg'
+					tensionOut: 1.1
 					expand: Object({
 						width: ( 60 / 80 ) * thickness * opticThickness * contrast
 						angle: - 112 + 'deg'
@@ -62,7 +63,7 @@ exports.glyphs['B_cap'] =
 				2:
 					x: Math.max(
 						contours[0].nodes[0].expandedTo[0].x + 204 + 200 * width - (23),
-						contours[0].nodes[0].expandedTo[1].x + 0.25 * ( 97 / 80 ) * thickness * opticThickness
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 97 / 80 ) * thickness * opticThickness + 10
 					)
 					y: contours[1].nodes[3].expandedTo[0].y + ( contours[1].nodes[0].expandedTo[0].y - contours[1].nodes[3].expandedTo[0].y ) * ( 164 / 312 ) - (5)
 					dirIn: 90 + 'deg'
@@ -78,7 +79,7 @@ exports.glyphs['B_cap'] =
 					dirIn: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 25 / 80 ) * thickness * opticThickness * contrast
+						width: ( 45 / 80 ) * thickness * opticThickness * contrast
 						angle: 63 + 'deg'
 						distr: 1
 					})
@@ -96,9 +97,14 @@ exports.glyphs['B_cap'] =
 						distr: 0.5
 					})
 				1:
-					x: contours[2].nodes[0].x + ( contours[2].nodes[2].expandedTo[0].x - contours[2].nodes[0].x ) * ( 145 / 415 ) + 40
+					x: Math.max(
+						contours[2].nodes[0].x + ( contours[2].nodes[2].expandedTo[0].x - contours[2].nodes[0].x ) * ( 145 / 415 ),
+						contours[0].nodes[0].expandedTo[1].x
+					)
+					# x: contours[0].nodes[0].expandedTo[0].x
 					y: contours[2].nodes[0].expandedTo[1].y
 					dirOut: 0 + 'deg'
+					tensionOut: 1.1
 					expand: Object({
 						width: ( 64 / 80 ) * thickness * opticThickness * contrast
 						angle: 180 + 120 + 'deg'
@@ -107,7 +113,7 @@ exports.glyphs['B_cap'] =
 				2:
 					x: Math.max(
 						contours[0].nodes[0].expandedTo[0].x + 260 + 200 * width - (22),
-						contours[0].nodes[0].expandedTo[1].x + 0.25 * ( 94 / 80 ) * thickness * opticThickness
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 94 / 80 ) * thickness * opticThickness + 10
 					)
 					y: contours[2].nodes[4].expandedTo[0].y + ( contours[2].nodes[0].expandedTo[0].y - contours[2].nodes[4].expandedTo[0].y ) * ( 192 / 368 )
 					dirIn: 90 + 'deg'
@@ -118,7 +124,10 @@ exports.glyphs['B_cap'] =
 						distr: 0.25
 					})
 				3:
-					x: contours[1].nodes[0].x + ( contours[2].nodes[2].expandedTo[0].x - contours[1].nodes[0].x ) * ( 145 / 367 )
+					x: Math.max(
+						contours[2].nodes[4].x + ( contours[2].nodes[2].expandedTo[0].x - contours[2].nodes[4].x ) * ( 131 / 396 ),
+						contours[0].nodes[0].expandedTo[1].x
+					)
 					y: 0
 					dirIn: 0 + 'deg'
 					typeOut: 'line'

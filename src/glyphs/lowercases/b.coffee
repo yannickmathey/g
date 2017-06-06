@@ -1,3 +1,4 @@
+# TODO: inktraps
 exports.glyphs['b'] =
 	unicode: 'b'
 	glyphName: 'b'
@@ -51,16 +52,22 @@ exports.glyphs['b'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[1].expandedTo[1].x - ( 10 / 80 ) * thickness
-					y: xHeight - 65 - (2)
+					x: contours[0].nodes[1].expandedTo[1].x
+					y: Math.min(
+						xHeight - 95 - (2) - ( 50 * aperture * apertureTop - 50 ),
+						xHeight
+					)
 					dirOut: Math.max(
-						90 - ( 12 + 35 * width ),
-						43
-					) + 'deg'
+						contours[1].nodes[0].expand.angle + Math.PI / 2,
+						Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ) + 30 / 180 * Math.PI
+					)
 					expand: Object({
 						width: ( 32 / 80 ) * thickness * contrast * contrastExtremity
-						angle: - 90 + 'deg'
-						distr: 0.1
+						angle: Math.min(
+							- 45 + ( 50 * aperture * apertureTop - 50 ),
+							0
+						) / 180 * Math.PI
+						distr: 1
 					})
 				1:
 					x: contours[1].nodes[0].expandedTo[0].x + ( contours[1].nodes[2].expandedTo[0].x - contours[1].nodes[0].expandedTo[0].x ) * 0.5
@@ -133,15 +140,15 @@ exports.glyphs['b'] =
 			parentParameters:
 				serifHeight: Math.min( ( 85 / 50 ) * serifHeight, serifHeight + 35 )
 				serifMedian: Math.max( ( 0.20 ) * serifMedian, serifMedian - 0.8 )
-		1:
-			base: ['inktrap', 'none']
-			id: 'inktrap'
-			parentAnchors:
-				0:
-					x: contours[1].nodes[0].x
-					y: contours[1].nodes[0].y
-					noneAnchor: contours[1].nodes[0].point
-			transformOrigin: contours[1].nodes[0].point
-			transforms: Array(
-				[ 'scale', inktrap ]
-			)
+		# 1:
+		# 	base: ['inktrap', 'none']
+		# 	id: 'inktrap'
+		# 	parentAnchors:
+		# 		0:
+		# 			x: contours[1].nodes[0].x
+		# 			y: contours[1].nodes[0].y
+		# 			noneAnchor: contours[1].nodes[0].point
+		# 	transformOrigin: contours[1].nodes[0].point
+		# 	transforms: Array(
+		# 		[ 'scale', inktrap ]
+		# 	)
