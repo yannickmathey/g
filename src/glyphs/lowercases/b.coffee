@@ -81,8 +81,8 @@ exports.glyphs['b'] =
 					})
 				2:
 					x: Math.max(
-						contours[0].nodes[0].expandedTo[0].x + 207 + 200 * width - (16),
-						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 83 / 80 ) * thickness + 10
+						contours[0].nodes[1].expandedTo[0].x + 207 + 200 * width - (16),
+						contours[0].nodes[1].expandedTo[1].x + 0.75 * ( 83 / 80 ) * thickness + 10
 					)
 					y: ( 247 / 450 ) * xHeight + (0)
 					dirOut: - 90 + 'deg'
@@ -93,8 +93,10 @@ exports.glyphs['b'] =
 						distr: 0.25
 					})
 				3:
-					x: contours[1].nodes[4].expandedTo[0].x + ( contours[1].nodes[2].expandedTo[0].x - contours[1].nodes[4].expandedTo[0].x ) * ( 160 / 390 )
-					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * ( 175 / 410 )
+					x: Math.max(
+						contours[1].nodes[4].expandedTo[0].x + ( contours[1].nodes[2].expandedTo[0].x - contours[1].nodes[4].expandedTo[0].x ) * ( 160 / 390 ),
+						contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[2].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * ( 175 / 410 )
+					)
 					y: - overshoot
 					dirOut: 180 + 'deg'
 					type: 'smooth'
@@ -116,6 +118,10 @@ exports.glyphs['b'] =
 							( ( 90 - ( 13 + 35 * width) ) / 80 ) * thickness
 						)
 					) + 'deg'
+					# dirIn: - Math.min(
+					# 	contours[1].nodes[0].expand.angle + Math.PI / 2,
+					# 	Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ) + 30 / 180 * Math.PI
+					# )
 					expand: Object({
 						width: thickness * contrast * contrastExtremity
 						angle: Math.PI / 2 - Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point )

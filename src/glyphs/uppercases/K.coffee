@@ -48,10 +48,15 @@ exports.glyphs['K'] =
 						contours[0].nodes[1].expandedTo[0].x + 285 + 200 * width - (16),
 						contours[0].nodes[1].expandedTo[1].x + 0.25 * ( 68 / 80 ) * thickness * contrast
 					)
+					x: contours[2].nodes[0].expandedTo[1].x + 53 - (16)
+					x: contours[0].nodes[1].expandedTo[1].x + + 200 + 200 * width - (16)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 68 / 80 ) * thickness * contrast
+						width: Math.min(
+							( ( 68 / 80 ) * thickness * contrast ) / Math.sin( Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, { x: contours[1].nodes[0].x - 0.75 * ( 73 / 80 ) * thickness * opticThickness, y: contours[1].nodes[0].y } ) ),
+							thickness * 1.5
+						)
 						angle: 180 + 'deg'
 						distr: 0.25
 					})
@@ -59,8 +64,11 @@ exports.glyphs['K'] =
 					x: contours[0].nodes[0].expandedTo[1].x + 1
 					y: ( 338 / 660 ) * capHeight
 					expand: Object({
-						width: ( 48 / 80 ) * thickness * contrast
-						angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].point ) - Math.PI / 2
+						width: Math.min(
+							( 48 / 80 ) * thickness * contrast * Math.sqrt( width ),
+							thickness * 1.5
+						)
+						angle: Utils.lineAngle( contours[2].nodes[0].point, contours[1].nodes[1].point )
 						distr: 1
 					})
 		2:
@@ -68,23 +76,23 @@ exports.glyphs['K'] =
 			closed: false
 			nodes:
 				0:
-					x: Math.max(
-						contours[0].nodes[1].expandedTo[0].x + 340 + 200 * width - (64),
-						contours[0].nodes[1].expandedTo[1].x + 0.75 * (( 90 / 80 ) * thickness * opticThickness / Math.cos( Math.PI / 2 - 43 / 180 * Math.PI ))
-					)
+					x: contours[0].nodes[1].expandedTo[1].x + 175 + (100 - (100/80) * thickness) + 150 * width
 					y: Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
-						width: ( 90 / 80 ) * thickness * opticThickness / Math.cos( 43 / 180 * Math.PI )
+						width: ( ( 90 / 80 ) * thickness * opticThickness ) / Math.cos( Utils.lineAngle(
+							contours[2].nodes[1].point,
+							contours[2].nodes[0].point
+						) + Math.PI / 2 )
 						angle: 0 + 'deg'
-						distr: 0.5
+						distr: 0
 					})
 				1:
 					x: contours[1].nodes[1].expandedTo[1].x
 					y: contours[1].nodes[1].expandedTo[1].y
 					expand: Object({
 						width: ( 80 / 80 ) * thickness * opticThickness
-						angle: 43 + 'deg'
+						angle: Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point )
 						distr: 0
 					})
 	components:

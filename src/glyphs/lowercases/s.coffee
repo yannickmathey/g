@@ -29,7 +29,7 @@ exports.glyphs['s'] =
 					y: 25
 					dirOut: - 25 + 'deg'
 					expand: Object({
-						width: ( 50 / 80 ) * thickness
+						width: ( 50 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 89 + 'deg'
 						distr: 0.1
 					})
@@ -39,7 +39,7 @@ exports.glyphs['s'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 36 / 80 ) * thickness
+						width: ( 36 / 80 ) * thickness * contrast
 						angle: 98 + 'deg'
 						distr: 0
 					})
@@ -107,7 +107,7 @@ exports.glyphs['s'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 39 / 80 ) * thickness
+						width: ( 39 / 80 ) * thickness * contrast
 						angle: 180 - 82 + 'deg'
 						distr: 1
 					})
@@ -116,7 +116,7 @@ exports.glyphs['s'] =
 					y: xHeight - 24 - (6)
 					dirIn: 150 + 'deg'
 					expand: Object({
-						width: ( 50 / 80 ) * thickness
+						width: ( 50 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 180 - 91 + 'deg'
 						distr: 0.9
 					})

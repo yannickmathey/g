@@ -149,7 +149,7 @@ exports.glyphs['f'] =
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 47 / 80 ) * thickness
+						width: ( 47 / 80 ) * thickness * contrast * contrastExtremity
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -158,7 +158,7 @@ exports.glyphs['f'] =
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 47 / 80 ) * thickness
+						width: ( 47 / 80 ) * thickness * contrast * contrastExtremity
 						angle: - 90 + 'deg'
 						distr: 0
 					})

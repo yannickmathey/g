@@ -10,7 +10,7 @@ exports.glyphs['r'] =
 	)
 	parameters:
 		spacingLeft: 50 * spacing + 50 + serifWidth
-		spacingRight: 50 * spacing + 40 + serifWidth
+		spacingRight: 50 * spacing # + 40 + serifWidth
 	tags: [
 		'all',
 		'latin',

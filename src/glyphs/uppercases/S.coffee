@@ -35,7 +35,7 @@ exports.glyphs['S'] =
 						Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[0].point )
 					)
 					expand: Object({
-						width: ( 75 / 80 ) * thickness * opticThickness
+						width: ( 75 / 80 ) * thickness * opticThickness * contrast * contrastExtremity
 						# angle: 55 + 'deg'
 						angle: Math.min(
 							Math.max(
@@ -52,7 +52,7 @@ exports.glyphs['S'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 47 / 80 ) * thickness * opticThickness
+						width: ( 47 / 80 ) * thickness * opticThickness * contrast
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -120,7 +120,7 @@ exports.glyphs['S'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 49 / 80 ) * thickness * opticThickness
+						width: ( 49 / 80 ) * thickness * opticThickness * contrast
 						angle: 180 - 100 + 'deg'
 						distr: 1
 					})
@@ -135,7 +135,7 @@ exports.glyphs['S'] =
 						Utils.lineAngle( contours[0].nodes[6].expandedTo[0].point, contours[0].nodes[5].expandedTo[1].point )
 					)
 					expand: Object({
-						width: ( 70 / 80 ) * thickness * opticThickness
+						width: ( 70 / 80 ) * thickness * opticThickness * contrast * contrastExtremity
 						angle: Math.min(
 							Math.max(
 								55 - ( 50 * aperture * apertureTop - 50 ),

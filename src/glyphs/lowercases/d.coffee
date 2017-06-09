@@ -64,7 +64,10 @@ exports.glyphs['d'] =
 				0:
 					x: contours[0].nodes[2].expandedTo[0].x + ( 10 / 80 ) * thickness
 					y: Math.min( 65, ( 65 / 450 ) * xHeight )
-					dirOut: - 140 + 'deg'
+					dirOut: Math.max(
+						- 140 / 180 * Math.PI,
+						Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ) + 30 / 180 * Math.PI
+					)
 					type: 'smooth'
 					expand: Object({
 						width: ( 35 / 80 ) * thickness * contrast * contrastExtremity
@@ -104,7 +107,10 @@ exports.glyphs['d'] =
 				4:
 					x: contours[0].nodes[2].expandedTo[0].x + ( 60 / 80 ) * thickness
 					y: xHeight - ( 20 / 450 ) * xHeight
-					dirIn: 140 + 'deg'
+					dirIn: Math.min(
+						140 / 180 * Math.PI,
+						Utils.lineAngle( contours[1].nodes[4].expandedTo[1].point, contours[1].nodes[3].expandedTo[0].point )
+					)
 					type: 'smooth'
 					expand: Object({
 						width: ( 87 / 80 ) * thickness * contrast * contrastExtremity

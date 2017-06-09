@@ -27,16 +27,28 @@ exports.glyphs['e'] =
 				0:
 					x: Math.max(
 						contours[0].nodes[2].expandedTo[0].x + 200 * width + 185 - (2),
-						contours[0].nodes[2].expandedTo[1].x + 0
+						contours[0].nodes[2].expandedTo[1].x + ( 72 / 80 ) * thickness + 10
 					)
 					y: Math.max(
-						95 + (1),
+						Math.min(
+							95 + ( 150 * aperture * apertureTop - 150 ) + (1),
+							xHeight / 2
+						),
 						contours[0].nodes[1].y + Math.sin( 60 / 180 * Math.PI ) * ( 86 / 80 ) * thickness + 30
 					)
-					dirOut: - 120 / 180 * Math.PI
+					dirOut: Math.max(
+						Math.min(
+							contours[0].nodes[0].expand.angle - Math.PI / 4,
+							0
+						),
+						Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[0].expandedTo[0].point ) + ( 30 / 180 * Math.PI ),
+					)
 					expand: Object({
 						width: ( 10 / 80 ) * thickness * contrast * contrastExtremity
-						angle: 108 + 'deg'
+						angle: Math.min(
+							108 + ( 50 * aperture * apertureTop - 50 ),
+							180 + 20
+						) / 180 * Math.PI
 						distr: 0.1
 					})
 				1:
@@ -111,7 +123,7 @@ exports.glyphs['e'] =
 				1:
 					x: contours[0].nodes[0].expandedTo[1].x
 					y: contours[0].nodes[0].expandedTo[1].y
-					dirIn: contours[0].nodes[0].dirOut - Math.min( 30, ( 30 / 80 ) * thickness * contrast * contrastExtremity ) / 180 * Math.PI
+					dirIn: contours[0].nodes[0].dirOut - ( 30 * contrast - Math.max( 30 * aperture - 30, 0 ) ) / 180 * Math.PI
 					typeOut: 'line'
 				2:
 					x: contours[0].nodes[0].expandedTo[0].x

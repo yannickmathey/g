@@ -1,3 +1,4 @@
+# TODO: oblique
 exports.glyphs['k'] =
 	unicode: 'k'
 	glyphName: 'k'
@@ -46,18 +47,18 @@ exports.glyphs['k'] =
 					y: ( 255 / 450 ) * xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 30 / 90 ) * thickness * Math.sqrt( width )
+						width: ( 30 / 90 ) * thickness * contrast * contrastExtremity * Math.sqrt( width )
 						angle: Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point ) - Math.PI / 2
 						distr: 0
 					})
 				1:
 					x: Math.max(
-						contours[0].nodes[1].expandedTo[0].x + 110 + 200 * width + (12),
+						contours[0].nodes[1].expandedTo[0].x + ( 85 + ( 30 / 80 ) * thickness) + 200 * width + (12),
 						contours[0].nodes[1].expandedTo[1].x + 0.1 * contours[1].nodes[1].expand.width + 10
 					)
 					y: xHeight - Math.max( 0, serifHeight * serifArc )
 					expand: Object({
-						width: (( 45 / 90 ) * thickness) / Math.cos( Math.PI / 2 - Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point ) ) # * Math.sqrt( width )
+						width: (( 45 / 90 ) * thickness) / Math.cos( Math.PI / 2 - Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point ) ) * contrast * contrastExtremity # * Math.sqrt( width )
 						angle: 0 + 'deg'
 						distr: 0.1
 					})
@@ -66,25 +67,25 @@ exports.glyphs['k'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[1].expandedTo[0].x - 13 - (12)
+					x: contours[1].nodes[1].expandedTo[0].x - (15/80) * thickness
 					y: 0 + Math.max( 0, serifHeight * serifArc )
 					typeOut: 'line'
 					expand: Object({
 						# width: thickness / Math.cos( Math.PI / 2 - Utils.lineAngle( contours[2].nodes[1].point, contours[2].nodes[0].point ) ) # * Math.sqrt( width )
-						width: ( ( 77 / 80 ) * thickness ) / Math.cos( Utils.lineAngle( contours[2].nodes[0].point, contours[2].nodes[1].point ) + Math.PI / 2 )
+						width: ( thickness ) / Math.cos( Utils.lineAngle( { x: contours[0].nodes[1].expandedTo[0].x + 185 + 200 * width + (0.25 * thickness), y: contours[2].nodes[0].y }, contours[2].nodes[1].point ) )
 						angle: 180 + 'deg'
-						distr: 0
+						distr: 0.25
 					})
 				1:
 					x: contours[1].nodes[0].expandedTo[0].x
 					y: Math.min(
-						contours[1].nodes[0].y - ( 15 / 80 ) * thickness,
-						contours[1].nodes[0].expandedTo[1].y
+						contours[1].nodes[0].y - ( 15 / 80 ) * thickness * contrast * contrastExtremity,
+						contours[1].nodes[0].expandedTo[0].y
 					)
 					typeOut: 'line'
 					expand: Object({
 						width: ( 75 / 80 ) * thickness * Math.sqrt( width )
-						angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point )
+						angle: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
 						distr: 0
 					})
 		3:
