@@ -113,13 +113,12 @@ exports.glyphs['c'] =
 					y: contours[0].nodes[1].expandedTo[1].y
 					dirIn: 0 + 'deg'
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x
+					x: Math.min(
+						contours[0].nodes[0].expandedTo[1].x,
+						contours[0].nodes[0].expandedTo[0].x - 4
+					)
 					y: contours[0].nodes[0].expandedTo[1].y
-					dirIn: contours[0].nodes[0].dirOut - Math.min(
-						30 * contrast + ( 30 * aperture * apertureTop - 30 ),
-						0
-					) / 180 * Math.PI
-					dirIn: contours[0].nodes[0].dirOut - ( 30 * contrast - Math.max( 30 * aperture - 30, 0 ) ) / 180 * Math.PI
+					dirIn: contours[0].nodes[0].dirOut - ( 30 * contrast - Math.max( 30 * aperture - ( 30 / 80 ) * thickness, 0 ) ) / 180 * Math.PI
 					typeOut: 'line'
 				2:
 					x: contours[0].nodes[0].expandedTo[0].x

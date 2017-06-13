@@ -39,6 +39,7 @@ exports.glyphs['U'] =
 						( 234 / 660 ) * capHeight,
 						contours[0].nodes[2].expandedTo[1].y + ( 30 / 80 ) * thickness
 					)
+					# y: ( 234 / 660 ) * capHeight
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -52,8 +53,17 @@ exports.glyphs['U'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 65 / 80 ) * thickness * opticThickness * contrast
+						# width: thickness * opticThickness * contrast / Math.sin(contours[0].nodes[2].expand.angle)
+						width: ( 64 / 80 ) * thickness * opticThickness * contrast
 						angle: 45 + 20 * contrast + 'deg'
+						# TODO:
+						# angle: Math.max(
+						# 	Math.atan2(
+						# 		((( 65 / 80 ) * thickness * opticThickness * contrast) + overshoot),
+						# 		(( contours[0].nodes[3].expandedTo[1].x + contours[0].nodes[1].expandedTo[1].x ) * 0.5 - contours[0].nodes[2].x)
+						# 	),
+						# 	0
+						# )
 						distr: 0
 					})
 				3:
@@ -62,6 +72,7 @@ exports.glyphs['U'] =
 					dirIn: - 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
+						# width: thickness * opticThickness * contrast * - Math.cos(contours[0].nodes[3].expand.angle)
 						width: ( 73 / 80 ) * thickness * opticThickness * contrast
 						angle: - 163 + 'deg'
 						distr: 0

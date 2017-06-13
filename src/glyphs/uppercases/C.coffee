@@ -132,6 +132,7 @@ exports.glyphs['C'] =
 				serifHeight: Math.min( ( 70 / 50 ) * serifHeight, serifHeight + 20 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )
 				serifRotate: Math.max( serifRotate, serifRotate + 0.22 )
+				serifCurve: Math.max( serifCurve, ( 10 / 80 ) * thickness )
 		2:
 			base: ['serif-curve-inside-auto', 'none']
 			id: 'topbottom'
@@ -151,6 +152,7 @@ exports.glyphs['C'] =
 				serifWidth: Math.min( ( 115 / 65 ) * serifWidth, serifWidth + 50 )
 				serifHeight: Math.min( ( 75 / 50 ) * serifHeight, serifHeight + 25 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )
+				serifCurve: Math.max( serifCurve, ( 10 / 80 ) * thickness )
 		3:
 			base: ['none', 'serif-curve-inside-auto']
 			id: 'toptop'

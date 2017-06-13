@@ -48,7 +48,7 @@ exports.glyphs['u'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 86 / 80 ) * thickness
+						width: ( 86 / 80 ) * thickness * contrast
 						angle: 58 + 'deg'
 						distr: 0
 					})
@@ -58,7 +58,7 @@ exports.glyphs['u'] =
 					dirIn: - 135 + 'deg'
 					tensionIn: 1.1
 					expand: Object({
-						width: ( 32 / 80 ) * thickness
+						width: ( 32 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 90 + 'deg'
 						distr: 0.5
 					})

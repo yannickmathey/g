@@ -82,10 +82,10 @@ exports.glyphs['G_cap'] =
 					x: contours[0].nodes[0].expandedTo[0].x + 10
 					y: Math.max(
 						75 + ( 150 * aperture * apertureBottom - 150 ),
-						0
+						contours[0].nodes[3].y + contours[0].nodes[3].expand.width * contours[0].nodes[3].expand.angle + 10
 					)
 					dirIn: Math.max(
-						contours[0].nodes[4].expand.angle - Math.PI / 2,
+						contours[0].nodes[4].expand.angle - Math.PI / 2 - 30 / 180 * Math.PI,
 						Math.PI + Utils.lineAngle( contours[0].nodes[4].expandedTo[1].point, contours[0].nodes[3].expandedTo[0].point )
 					)
 					type: 'smooth'
@@ -141,6 +141,7 @@ exports.glyphs['G_cap'] =
 				serifWidth: Math.min( ( 115 / 65 ) * serifWidth, serifWidth + 50 )
 				serifHeight: Math.min( ( 75 / 50 ) * serifHeight, serifHeight + 25 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )
+				serifCurve: Math.max( serifCurve, ( 10 / 80 ) * thickness )
 		1:
 			base: ['none', 'serif-curve-inside-auto']
 			id: 'toptop'

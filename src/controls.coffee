@@ -380,7 +380,7 @@ exports.controls = [
 	,
 		name: 'serifRotate'
 		label: 'Serif Rotation'
-		min: 0
+		min: -1
 		max: 2
 		step: 0.1
 		init: 0

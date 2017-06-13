@@ -79,19 +79,25 @@ exports.glyphs['g'] =
 				0:
 					x: anchors[0].junctionBottom.x
 					y: anchors[0].junctionBottom.y
-					dirOut: - 165 + 'deg'
+					dirOut: Math.min(
+						- 165 / 180 * Math.PI,
+						Utils.lineAngle( contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ) - 20 / 180 * Math.PI
+					)
 					expand: Object({
-						width: ( 20 / 80 ) * thickness
+						width: ( 20 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 90 + 'deg'
 						distr: 0
 					})
 				1:
 					x: spacingLeft + (18)
-					y: contours[1].nodes[2].expandedTo[1].y + ( contours[1].nodes[0].expandedTo[1].y - contours[1].nodes[2].expandedTo[1].y ) * ( 85 / 194 )
+					y: Math.max(
+						contours[1].nodes[2].expandedTo[1].y + ( contours[1].nodes[0].expandedTo[1].y - contours[1].nodes[2].expandedTo[1].y ) * ( 85 / 194 ),
+						contours[1].nodes[2].y + ( contours[0].nodes[3].expandedTo[0].y - contours[1].nodes[2].y ) * 0.5
+					)
 					dirIn: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 78 / 80 ) * thickness
+						width: ( 78 / 80 ) * thickness * contrast
 						angle: 180 + 25 + 'deg'
 						distr: 0.75
 					})
@@ -106,7 +112,7 @@ exports.glyphs['g'] =
 						distr: 0.5
 					})
 				3:
-					x: contours[0].nodes[3].expandedTo[0].x + 34 + (22)
+					x: contours[0].nodes[3].expandedTo[0].x + 34 * contrast + (22)
 					y: - overshoot + (35)
 					dirOut: 0 + 'deg'
 					tensionOut: 1.2
@@ -121,7 +127,7 @@ exports.glyphs['g'] =
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 76 / 80 ) * thickness
+						width: ( 76 / 80 ) * thickness * contrast
 						angle: 180 + 16 + 'deg'
 						distr: 0.25
 					})
@@ -131,7 +137,7 @@ exports.glyphs['g'] =
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 30 / 80 ) * thickness
+						width: ( 30 / 80 ) * thickness * contrast
 						angle: 70 + 'deg'
 						distr: 0
 					})
@@ -148,10 +154,13 @@ exports.glyphs['g'] =
 				7:
 					x: contours[1].nodes[2].expandedTo[1].x
 					y: contours[1].nodes[2].expandedTo[1].y
-					dirIn: - 160 + 'deg'
+					dirIn: Math.min(
+						- 160 / 180 * Math.PI,
+						Utils.lineAngle( contours[1].nodes[7].expandedTo[1].point, contours[1].nodes[6].expandedTo[1].point ) - 20 / 180 * Math.PI
+					)
 					type: 'smooth'
 					expand: Object({
-						width: ( 10 / 80 ) * thickness
+						width: ( 10 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 180 + 110 + 'deg'
 						distr: 1
 					})
@@ -164,7 +173,7 @@ exports.glyphs['g'] =
 					y: anchors[0].junctionTop.y
 					typeOut: 'line'
 					expand: Object({
-						width: ( 36 / 80 ) * thickness
+						width: ( 36 / 80 ) * thickness * contrast * contrastExtremity
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -172,7 +181,7 @@ exports.glyphs['g'] =
 					x: contours[0].nodes[2].expandedTo[0].x + 60
 					y: xHeight
 					expand: Object({
-						width: ( 54 / 80 ) * thickness
+						width: ( 54 / 80 ) * thickness * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})

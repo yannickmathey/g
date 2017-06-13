@@ -58,8 +58,8 @@ exports.glyphs['S'] =
 					})
 				2:
 					x: Math.max(
-						contours[0].nodes[0].x + 205 + 200 * width - (25),
-						contours[0].nodes[0].x + 0.25 * ( 75 / 80 ) * thickness * opticThickness + 10
+						contours[0].nodes[0].x + 205 + 200 * width - (50),
+						contours[0].nodes[0].x + 0.5 * ( 75 / 80 ) * thickness * opticThickness + 10
 					)
 					y: (contours[0].nodes[1].y + ( 36 / 80 ) * thickness * opticThickness) +
 						(
@@ -76,7 +76,7 @@ exports.glyphs['S'] =
 					expand: Object({
 						width: ( 90 / 80 ) * thickness * opticThickness
 						angle: - 165 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 				3:
 					x: contours[0].nodes[4].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[4].expandedTo[1].x ) * ( 140 / 290 )
@@ -177,6 +177,7 @@ exports.glyphs['S'] =
 				serifWidth: Math.max( ( 85 / 65 ) * serifWidth, serifWidth + 20 )
 				serifHeight: Math.max( ( 60 / 50 ) * serifHeight, serifHeight + 10 )
 				serifRotate: Math.max( serifRotate, serifRotate + 0.22 )
+				serifCurve: Math.max( serifCurve, ( 20 / 80 ) * thickness )
 		2:
 			base: ['none', 'serif-curve-inside-auto']
 			id: 'bottombottom'
@@ -209,3 +210,4 @@ exports.glyphs['S'] =
 				serifWidth: Math.max( ( 100 / 65 ) * serifWidth, serifWidth + 35 )
 				serifHeight: Math.max( ( 60 / 50 ) * serifHeight, serifHeight + 10 )
 				serifRotate: Math.max( serifRotate, serifRotate + 0.18 )
+				serifCurve: Math.max( serifCurve, ( 10 / 80 ) * thickness )

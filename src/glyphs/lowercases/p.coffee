@@ -58,6 +58,7 @@ exports.glyphs['p'] =
 		1:
 			skeleton: true
 			closed: false
+			inverseOrder: true
 			nodes:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x - ( 10 / 80 ) * thickness

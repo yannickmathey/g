@@ -32,7 +32,7 @@ exports.glyphs['t'] =
 					y: contours[0].nodes[1].expandedTo[1].y
 					typeOut: 'line'
 					expand: Object({
-						width: ( 6 / 80 ) * thickness
+						width: ( 6 / 80 ) * thickness * contrast * contrastExtremity
 						angle: - 90 + 'deg'
 						distr: 1
 					})
@@ -41,7 +41,7 @@ exports.glyphs['t'] =
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 47 / 80 ) * thickness
+						width: ( 47 / 80 ) * thickness * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -49,7 +49,7 @@ exports.glyphs['t'] =
 					x: contours[1].nodes[3].expandedTo[1].x + 132 * width
 					y: xHeight
 					expand: Object({
-						width: ( 47 / 80 ) * thickness
+						width: ( 47 / 80 ) * thickness * contrast
 						angle: - 90 + 'deg'
 						distr: 0
 					})
@@ -61,9 +61,12 @@ exports.glyphs['t'] =
 					x: contours[0].nodes[2].x + 12
 					y: Math.max(
 						53 + (1),
-						contours[1].nodes[1].y + Math.sin( 55 / 180 * Math.PI ) * ( 82 / 80 ) * thickness - 3
+						contours[1].nodes[1].y + Math.sin( 55 / 180 * Math.PI ) * ( 82 / 80 ) * thickness * contrast - 3
 					)
-					dirOut: - 116 / 180 * Math.PI
+					dirOut: Math.max(
+						- 116 / 180 * Math.PI,
+						Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point ) + 30 / 180 * Math.PI
+					)
 					expand: Object({
 						width: ( 10 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 108 + 'deg'
@@ -75,8 +78,15 @@ exports.glyphs['t'] =
 					dirIn: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
-						width: ( 82 / 80 ) * thickness
-						angle: 55 + 'deg'
+						width: ( (41 + 41 * contrast) / 80 ) * thickness
+						# angle: 55 + 'deg'
+						angle: Math.max(
+							Math.atan2(
+								((( 82 / 80 ) * thickness * opticThickness * contrast) + overshoot),
+								(( contours[0].nodes[2].expandedTo[1].x + contours[0].nodes[0].x ) * 0.5 - contours[0].nodes[1].x)
+							),
+							Utils.lineAngle( contours[0].nodes[1].point, contours[0].nodes[0].point )
+						)
 						distr: 0
 					})
 				2:

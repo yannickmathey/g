@@ -46,7 +46,7 @@ exports.glyphs['s'] =
 				2:
 					x: Math.max(
 						contours[0].nodes[0].x + 100 + 200 * width - (14),
-						contours[0].nodes[0].x + 0.25 * ( 75 / 80 ) * thickness + 10
+						contours[0].nodes[0].x + 0.5 * ( 75 / 80 ) * thickness + 10
 					)
 					y: (contours[0].nodes[1].y + ( 36 / 80 ) * thickness) +
 						(
@@ -63,7 +63,7 @@ exports.glyphs['s'] =
 					expand: Object({
 						width: ( 75 / 80 ) * thickness
 						angle: - 160 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 				3:
 					x: contours[0].nodes[4].expandedTo[1].x + ( contours[0].nodes[2].expandedTo[0].x - contours[0].nodes[4].expandedTo[1].x ) * ( 140 / 290 )
@@ -112,7 +112,7 @@ exports.glyphs['s'] =
 						distr: 1
 					})
 				6:
-					x: contours[0].nodes[2].x
+					x: contours[0].nodes[2].expandedTo[0].x - 16
 					y: xHeight - 24 - (6)
 					dirIn: 150 + 'deg'
 					expand: Object({

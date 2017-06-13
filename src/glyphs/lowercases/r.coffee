@@ -48,24 +48,32 @@ exports.glyphs['r'] =
 			nodes:
 				0:
 					x: contours[1].nodes[1].expandedTo[0].x + 38
-					y: contours[1].nodes[1].expandedTo[0].y - Math.tan( ( Math.PI - contours[1].nodes[1].dirOut ) ) * 38
-					typeOut: 'line'
+					y: Math.min(
+						contours[1].nodes[1].expandedTo[0].y - Math.tan( ( Math.PI - contours[1].nodes[1].dirOut ) ) * 38,
+						contours[1].nodes[1].expandedTo[1].y - ( 95 / 80 ) * thickness
+					)
+					# typeOut: 'line'
+					dirOut: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].expandedTo[0].point )
 					expand: Object({
 						width: ( 74 / 80 ) * thickness
 						angle: 180 - 116 + 'deg'
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 152 * width
+					x: contours[0].nodes[0].expandedTo[1].x + 132 * width + ( 20 / 80 ) * thickness
 					y: xHeight
-					dirOut: 157 / 180 * Math.PI
+					dirOut: Math.max(
+						157 / 180 * Math.PI,
+						Utils.lineAngle( contours[1].nodes[1].point, contours[1].nodes[2].point ) - 30 / 180 * Math.PI
+					)
+					tensionOut: 1 * contrast
 					expand: Object({
-						width: ( 90 / 80 ) * thickness * contrast
+						width: ( 90 / 80 ) * thickness
 						angle: 180 - 116 + 'deg'
 						distr: 1
 					})
 				2:
-					x: contours[1].nodes[3].x + ( contours[1].nodes[0].expandedTo[1].x - contours[1].nodes[3].x ) * ( 124 / 190 )
+					x: contours[1].nodes[3].x + ( contours[1].nodes[1].x - contours[1].nodes[3].x ) * ( 124 / 184 )
 					y: xHeight + overshoot
 					dirOut: 180 + 'deg'
 					tensionOut: 1.25
@@ -78,10 +86,7 @@ exports.glyphs['r'] =
 				3:
 					x: contours[0].nodes[0].expandedTo[1].x - ( 8 / 80 ) * thickness
 					y: xHeight - 94 - (3)
-					dirIn: Math.max(
-						90 - ( 30 * width ),
-						60
-					) + 'deg'
+					dirIn: Utils.lineAngle( contours[1].nodes[3].expandedTo[1].point, contours[1].nodes[2].expandedTo[1].point ) + ( 12 / 180 * Math.PI )
 					expand: Object({
 						width: ( 34 / 80 ) * thickness * contrast * contrastExtremity
 						angle: 180 - 90 + 'deg'
@@ -96,7 +101,7 @@ exports.glyphs['r'] =
 					x: contours[1].nodes[1].expandedTo[1].x
 					y: contours[1].nodes[1].expandedTo[1].y
 					typeIn: 'line'
-					dirOut: Utils.lineAngle( contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[1].expandedTo[0].point )
+					dirOut: Utils.lineAngle( contours[1].nodes[2].expandedTo[1].point, contours[1].nodes[0].expandedTo[1].point )
 				1:
 					x: contours[1].nodes[0].expandedTo[1].x
 					y: contours[1].nodes[0].expandedTo[1].y
