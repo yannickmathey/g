@@ -10,6 +10,7 @@ exports.lib =
 		minThickness: Math.max( 40, Math.min( 100, thickness ))
 		correctWidthAperture: Math.max(0, 180 - 180 * width)
 		correctTensionAperture: 1.2 * ( aperture / aperture ) # dirty workaround
+		serifAperture: ( aperture / aperture ) # dirty workaround
 		serifHeight:
 			if serifWidth < 0.1 && serifHeight < 0.1
 			then Math.max(5, serifHeight)

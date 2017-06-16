@@ -1,9 +1,8 @@
-# TODO: make svg alt images
 exports.glyphs['one'] =
 	unicode: '1'
 	glyphName: 'one'
 	characterName: 'DIGIT ONE'
-	altImg: ''
+	altImg: 'alt-spectral-1-0.svg'
 	ot:
 		advanceWidth: contours[0].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
