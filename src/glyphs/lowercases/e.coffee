@@ -112,6 +112,31 @@ exports.glyphs['e'] =
 						distr: 0.1
 					})
 				1:
+					x: contours[0].nodes[3].x
+					y: contours[1].nodes[0].y
+					typeOut: 'line'
+					expand: Object({
+						width: contours[1].nodes[0].expand.width
+						angle: 90 + 'deg'
+						distr: 0.1
+					})
+		4:
+			skeleton: true
+			closed: false
+			nodes:
+				0:
+					x: contours[0].nodes[3].x
+					y: contours[0].nodes[4].expandedTo[0].y
+					typeOut: 'line'
+					expand: Object({
+						width: Math.min(
+							( 46 / 80 ) * thickness * contrast,
+							contours[0].nodes[3].expandedTo[1].y - ( contours[1].nodes[0].y - 0.9 * ( 46 / 80 ) * thickness * contrast ) - thickness
+						)
+						angle: 90 + 'deg'
+						distr: 0.1
+					})
+				1:
 					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[2].expandedTo[1].x - contours[0].nodes[2].expandedTo[0].x ) * 0.9
 					y: contours[1].nodes[0].y
 					typeOut: 'line'
