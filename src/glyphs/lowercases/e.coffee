@@ -79,7 +79,11 @@ exports.glyphs['e'] =
 					type: 'smooth'
 					expand: Object({
 						width: ( 47 / 80 ) * thickness * contrast
-						angle: - 110 + 'deg'
+						# angle: Math.max(
+						# 	- Math.PI / 2 - Math.asin( (contours[0].nodes[3].x - ( contours[0].nodes[2].expandedTo[1].x + contours[0].nodes[4].expandedTo[1].x ) / 2) / ( ( 47 / 80 ) * thickness * contrast) ),
+						# 	Utils.lineAngle( contours[0].nodes[3].point, contours[0].nodes[2].expandedTo[1].point ) + 10 / 180 * Math.PI
+						# )
+						angle: Utils.lineAngle( contours[0].nodes[3].point, contours[0].nodes[2].expandedTo[1].point ) + 12 / 180 * Math.PI
 						distr: 0
 					})
 				4:
@@ -100,7 +104,10 @@ exports.glyphs['e'] =
 					y: contours[0].nodes[4].expandedTo[0].y
 					typeOut: 'line'
 					expand: Object({
-						width: ( 46 / 80 ) * thickness * contrast
+						width: Math.min(
+							( 46 / 80 ) * thickness * contrast,
+							contours[0].nodes[3].expandedTo[1].y - ( contours[1].nodes[0].y - 0.9 * ( 46 / 80 ) * thickness * contrast ) - thickness
+						)
 						angle: 90 + 'deg'
 						distr: 0.1
 					})
@@ -109,7 +116,7 @@ exports.glyphs['e'] =
 					y: contours[1].nodes[0].y
 					typeOut: 'line'
 					expand: Object({
-						width: ( 46 / 80 ) * thickness * contrast * contrastExtremity
+						width: contours[1].nodes[0].expand.width * contrastExtremity
 						angle: 90 + 'deg'
 						distr: 0.1
 					})

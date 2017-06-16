@@ -52,7 +52,7 @@ exports.glyphs['L'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[0].x + 215 + 200 * width + Math.max( 0, ( 20 / 80 ) * thickness - 20 )
+					x: contours[0].nodes[0].expandedTo[0].x + 215 + 200 * width + Math.max( 0, ( 30 / 80 ) * thickness - 30 )
 					y: contours[1].nodes[1].expandedTo[0].y
 					expand: Object({
 						width: ( 55 / 80 ) * thickness * opticThickness * contrast
@@ -121,20 +121,26 @@ exports.glyphs['L'] =
 					noneAnchor: contours[1].nodes[0].expandedTo[1].point
 					opposite: contours[1].nodes[0].expandedTo[0].point
 					reversed: true
+					rotate: - 15 * serifRotate
 			transformOrigin: contours[1].nodes[0].expandedTo[1].point
 			transforms: Array(
-				[ 'scaleY', -1 ]
+				[ 'scaleY', -1 ],
+				[ 'translateX', - ( Math.tan( (- (15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
 			)
 			parentParameters:
 				serifWidth: Math.min( ( 165 / 65 ) * serifWidth, serifWidth + 100 )
 				serifHeight: Math.min( ( 80 / 50 ) * serifHeight, serifHeight + 30 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )
 		4:
-			base: ['none', 'serif-horizontal']
+			base: ['serif-horizontal-fake', 'none', 'serif-horizontal']
 			id: 'bottomrightbottom'
 			parentAnchors:
 				0:
 					base: contours[1].nodes[0].expandedTo[0].point
 					noneAnchor: contours[1].nodes[0].expandedTo[0].point
 					opposite: contours[1].nodes[0].expandedTo[1].point
-			transformOrigin: contours[1].nodes[0].expandedTo[1].point
+					rotate: 15 * serifRotate
+			transformOrigin: contours[0].nodes[0].expandedTo[1].point
+			transforms: Array(
+				[ 'translateX', ( Math.tan( ((15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
+			)

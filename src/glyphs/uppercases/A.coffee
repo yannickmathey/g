@@ -98,10 +98,10 @@ exports.glyphs['A'] =
 			nodes:
 				0:
 					x: Utils.onLine({
-						y: ( 262 / 660 ) * capHeight * crossbar - (27/80) * thickness * opticThickness * contrast
+						y: ( 290 / 660 ) * capHeight * crossbar - contours[3].nodes[0].expand.width * 1.3
 						on: [ contours[1].nodes[0].expandedTo[1].point, contours[1].nodes[1].expandedTo[1].point ]
 					})
-					y: ( 262 / 660 ) * capHeight * crossbar - (27/80) * thickness * opticThickness * contrast
+					y: ( 290 / 660 ) * capHeight * crossbar - contours[3].nodes[0].expand.width * 1.3
 					typeOut: 'line'
 					expand: Object({
 						width: ( 55 / 80 ) * thickness * opticThickness * contrast
@@ -110,10 +110,10 @@ exports.glyphs['A'] =
 					})
 				1:
 					x: Utils.onLine({
-						y: ( 262 / 660 ) * capHeight * crossbar - (27/80) * thickness * opticThickness * contrast
+						y: contours[3].nodes[0].y
 						on: [ contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[1].point ]
 					})
-					y: ( 262 / 660 ) * capHeight * crossbar - (27/80) * thickness * opticThickness * contrast
+					y: contours[3].nodes[0].y
 					typeOut: 'line'
 					expand: Object({
 						width: ( 55 / 80 ) * thickness * opticThickness * contrast

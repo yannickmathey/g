@@ -120,6 +120,21 @@ exports.glyphs['Z'] =
 					})
 	components:
 		0:
+			base: ['serif-horizontal-fake', 'none', 'serif-horizontal']
+			id: 'toplefttop'
+			parentAnchors:
+				0:
+					base: contours[1].nodes[0].expandedTo[0].point
+					noneAnchor: contours[1].nodes[0].expandedTo[0].point
+					opposite: contours[1].nodes[0].expandedTo[1].point
+					rotate: 15 * serifRotate
+			transformOrigin: contours[1].nodes[0].expandedTo[0].point
+			transforms: Array(
+				[ 'scaleY', -1 ],
+				[ 'scaleX', -1 ],
+				[ 'translateX', - ( Math.tan( (- (15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
+			)
+		1:
 			base: ['serif-horizontal', 'none']
 			id: 'topleftbottom'
 			parentAnchors:
@@ -128,15 +143,17 @@ exports.glyphs['Z'] =
 					noneAnchor: contours[1].nodes[0].expandedTo[1].point
 					opposite: contours[1].nodes[0].expandedTo[0].point
 					reversed: true
+					rotate: - 15 * serifRotate
 			transformOrigin: contours[1].nodes[0].expandedTo[0].point
 			transforms: Array(
-				[ 'scaleX', -1 ]
+				[ 'scaleX', -1 ],
+				[ 'translateX', - ( Math.tan( (- (15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
 			)
 			parentParameters:
 				serifWidth: Math.min( ( 125 / 65 ) * serifWidth, serifWidth + 60 )
 				serifHeight: Math.min( ( 80 / 50 ) * serifHeight, serifHeight + 30 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )
-		1:
+		2:
 			base: ['serif-horizontal', 'none']
 			id: 'bottomrighttop'
 			parentAnchors:
@@ -145,20 +162,26 @@ exports.glyphs['Z'] =
 					noneAnchor: contours[0].nodes[0].expandedTo[1].point
 					opposite: contours[0].nodes[0].expandedTo[0].point
 					reversed: true
+					rotate: - 15 * serifRotate
 			transformOrigin: contours[0].nodes[0].expandedTo[1].point
 			transforms: Array(
-				[ 'scaleY', -1 ]
+				[ 'scaleY', -1 ],
+				[ 'translateX', - ( Math.tan( (- (15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
 			)
 			parentParameters:
 				serifWidth: Math.min( ( 135 / 65 ) * serifWidth, serifWidth + 70 )
 				serifHeight: Math.min( ( 80 / 50 ) * serifHeight, serifHeight + 30 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )
-		2:
-			base: ['none', 'serif-horizontal']
+		3:
+			base: ['serif-horizontal-fake', 'none', 'serif-horizontal']
 			id: 'bottomrightbottom'
 			parentAnchors:
 				0:
 					base: contours[0].nodes[0].expandedTo[0].point
 					noneAnchor: contours[0].nodes[0].expandedTo[0].point
 					opposite: contours[0].nodes[0].expandedTo[1].point
+					rotate: 15 * serifRotate
 			transformOrigin: contours[0].nodes[0].expandedTo[1].point
+			transforms: Array(
+				[ 'translateX', ( Math.tan( ((15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
+			)

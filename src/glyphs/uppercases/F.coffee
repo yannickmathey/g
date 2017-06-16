@@ -131,13 +131,17 @@ exports.glyphs['F'] =
 					base: contours[1].nodes[1].expandedTo[1].point
 					noneAnchor: contours[1].nodes[1].expandedTo[1].point
 					opposite: contours[1].nodes[1].expandedTo[0].point
+					rotate: - 15 * serifRotate
 			transformOrigin: contours[1].nodes[1].expandedTo[0].point
+			transforms: Array(
+				[ 'translateX', - ( Math.tan( (- (15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
+			)
 			parentParameters:
 				serifWidth: Math.min( ( 115 / 65 ) * serifWidth, serifWidth + 50 )
 				serifHeight: Math.min( ( 75 / 50 ) * serifHeight, serifHeight + 25 )
 				serifMedian: Math.max( 0.23 * serifMedian, serifMedian - 0.12 )
 		4:
-			base: ['none', 'serif-horizontal']
+			base: ['serif-horizontal-fake', 'none', 'serif-horizontal']
 			id: 'toprighttop'
 			parentAnchors:
 				0:
@@ -145,9 +149,11 @@ exports.glyphs['F'] =
 					noneAnchor: contours[1].nodes[1].expandedTo[0].point
 					opposite: contours[1].nodes[1].expandedTo[1].point
 					reversed: true
+					rotate: 15 * serifRotate
 			transformOrigin: contours[1].nodes[1].expandedTo[0].point
 			transforms: Array(
-				[ 'scaleY', -1 ]
+				[ 'scaleY', -1 ],
+				[ 'translateX', - ( Math.tan( (- (15 * 2) * serifRotate ) / 180 * Math.PI ) * ( ( 50 / 80 ) * thickness * opticThickness * contrast * 0.5 ) ) ]
 			)
 		5:
 			base: ['serif-horizontal', 'none']

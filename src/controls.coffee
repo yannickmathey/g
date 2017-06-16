@@ -240,28 +240,28 @@ exports.controls = [
 		maxAdvised: 0.8
 		disabled: false
 		demo: true
-	,
-		name: 'inktrap'
-		label: 'inktrap'
-		min: 0.01
-		max: 2
-		step: 0.01
-		init: 1
-		minAdvised: 0
-		maxAdvised: 1
-		disabled: false
-		demo: false
-	,
-		name: 'breakPath'
-		label: 'Break Path'
-		min: 0
-		max: 1
-		step: 0.1
-		init: 1
-		minAdvised: 0.5
-		maxAdvised: 1
-		disabled: true
-		demo: false
+	# ,
+	# 	name: 'inktrap'
+	# 	label: 'inktrap'
+	# 	min: 0.01
+	# 	max: 2
+	# 	step: 0.01
+	# 	init: 1
+	# 	minAdvised: 0
+	# 	maxAdvised: 1
+	# 	disabled: false
+	# 	demo: false
+	# ,
+	# 	name: 'breakPath'
+	# 	label: 'Break Path'
+	# 	min: 0
+	# 	max: 1
+	# 	step: 0.1
+	# 	init: 1
+	# 	minAdvised: 0.5
+	# 	maxAdvised: 1
+	# 	disabled: true
+	# 	demo: false
 	]
 ,
 	tab: true
@@ -388,26 +388,26 @@ exports.controls = [
 		maxAdvised: 1
 		disabled: false
 		demo: false
-	,
-		name: 'serifAperture'
-		label: 'Serif Aperture'
-		min: 0
-		max: 10
-		step: 0.01
-		init: 2.5
-		minAdvised: 0
-		maxAdvised: 5
-		disabled: false
-	,
-		name: 'serifBall'
-		label: 'Terminal Ball'
-		min: 0.01
-		max: 3
-		step: 0.01
-		init: 1
-		minAdvised: 0
-		maxAdvised: 1.1
-		disabled: false
-		demo: false
+	# ,
+	# 	name: 'serifAperture'
+	# 	label: 'Serif Aperture'
+	# 	min: 0
+	# 	max: 10
+	# 	step: 0.01
+	# 	init: 2.5
+	# 	minAdvised: 0
+	# 	maxAdvised: 5
+	# 	disabled: false
+	# ,
+	# 	name: 'serifBall'
+	# 	label: 'Terminal Ball'
+	# 	min: 0.01
+	# 	max: 3
+	# 	step: 0.01
+	# 	init: 1
+	# 	minAdvised: 0
+	# 	maxAdvised: 1.1
+	# 	disabled: false
+	# 	demo: false
 	]
 ]
