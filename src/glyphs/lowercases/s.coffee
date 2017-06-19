@@ -45,7 +45,7 @@ exports.glyphs['s'] =
 					})
 				2:
 					x: Math.max(
-						contours[0].nodes[0].x + 100 + 200 * width - (14),
+						contours[0].nodes[0].x + 100 + 200 * width - (38),
 						contours[0].nodes[0].x + 0.5 * ( 75 / 80 ) * thickness + 10
 					)
 					y: (contours[0].nodes[1].y + ( 36 / 80 ) * thickness) +
