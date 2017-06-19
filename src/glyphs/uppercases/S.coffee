@@ -27,12 +27,18 @@ exports.glyphs['S'] =
 				0:
 					x: spacingLeft + (4)
 					y: Math.max(
-						35 + (7) + ( 150 * aperture * apertureBottom - 150 ),
+						Math.min(
+							35 + (7) + ( 150 * aperture * apertureBottom - 150 ),
+							contours[0].nodes[2].expandedTo[0].y
+						),
 						0
 					)
 					dirOut: Math.min(
-						contours[0].nodes[0].expand.angle - Math.PI / 2,
-						Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[0].point )
+						Math.min(
+							contours[0].nodes[0].expand.angle - Math.PI / 2,
+							Utils.lineAngle( contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[1].expandedTo[0].point )
+						) + ( 10 / 180 * Math.PI ) * aperture * apertureTop,
+						- Math.PI / 2 + ( 5 / 180 * Math.PI )
 					)
 					expand: Object({
 						width: ( 75 / 80 ) * thickness * opticThickness * contrast * contrastExtremity
@@ -127,12 +133,18 @@ exports.glyphs['S'] =
 				6:
 					x: contours[0].nodes[2].expandedTo[0].x - 31 - (9)
 					y: Math.min(
-						capHeight - 35 - (4) - ( 150 * aperture * apertureTop - 150 ),
+						Math.max(
+							capHeight - 35 - (4) - ( 150 * aperture * apertureTop - 150 ),
+							contours[0].nodes[4].expandedTo[1].y
+						),
 						capHeight
 					)
-					dirIn: Math.min(
-						contours[0].nodes[6].expand.angle + Math.PI / 2,
-						Utils.lineAngle( contours[0].nodes[6].expandedTo[0].point, contours[0].nodes[5].expandedTo[1].point )
+					dirIn: Math.max(
+						Math.min(
+							contours[0].nodes[6].expand.angle + Math.PI / 2,
+							Utils.lineAngle( contours[0].nodes[6].expandedTo[0].point, contours[0].nodes[5].expandedTo[1].point )
+						) - ( 10 / 180 * Math.PI ) * aperture * apertureTop,
+						Math.PI / 2 - ( 5 / 180 * Math.PI )
 					)
 					expand: Object({
 						width: ( 70 / 80 ) * thickness * opticThickness * contrast * contrastExtremity

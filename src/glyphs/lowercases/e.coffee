@@ -35,7 +35,7 @@ exports.glyphs['e'] =
 							95 + ( 150 * aperture * apertureBottom - 150 ) + (1),
 							xHeight / 2
 						),
-						contours[0].nodes[1].y + Math.sin( 60 / 180 * Math.PI ) * ( 86 / 80 ) * thickness + 30
+						contours[0].nodes[1].y + Math.sin( 60 / 180 * Math.PI ) * ( 86 / 80 ) * thickness + 30 * aperture * apertureBottom
 					)
 					dirOut: Math.max(
 						Math.min(

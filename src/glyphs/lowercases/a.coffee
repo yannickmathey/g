@@ -32,7 +32,7 @@ exports.glyphs['a'] =
 							xHeight - 117 - ( 150 * aperture * apertureTop - 150 ),
 							contours[1].nodes[3].y + 0.25 * thickness + 10
 						),
-						xHeight
+						xHeight - contours[0].nodes[1].expand.width
 					)
 					dirOut: contours[0].nodes[0].expand.angle + ( ( 90 - 4 ) / 180 * Math.PI )
 					type: 'smooth'
