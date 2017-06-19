@@ -32,10 +32,10 @@ exports.glyphs['c'] =
 					)
 					y: Math.max(
 						Math.min(
-							95 + ( 150 * aperture * apertureTop - 150 ) + (1),
+							95 + ( 150 * aperture * apertureBottom - 150 ) + (1),
 							xHeight / 2
 						),
-						contours[0].nodes[1].y + Math.sin( 60 / 180 * Math.PI ) * ( 86 / 80 ) * thickness + 30
+						contours[0].nodes[1].y + Math.sin( 60 / 180 * Math.PI ) * ( 86 / 80 ) * thickness + 30 * aperture * apertureBottom
 					)
 					dirOut: Math.max(
 						Math.min(
@@ -47,7 +47,7 @@ exports.glyphs['c'] =
 					expand: Object({
 						width: ( 10 / 80 ) * thickness * contrast * contrastExtremity
 						angle: Math.min(
-							108 + ( 50 * aperture * apertureTop - 50 ),
+							108 + ( 50 * aperture * apertureBottom - 50 ),
 							180 + 20
 						) / 180 * Math.PI
 						distr: 0.1
@@ -118,7 +118,10 @@ exports.glyphs['c'] =
 						contours[0].nodes[0].expandedTo[0].x - 4
 					)
 					y: contours[0].nodes[0].expandedTo[1].y
-					dirIn: contours[0].nodes[0].dirOut - ( 30 * contrast - Math.max( 30 * aperture - ( 30 / 80 ) * thickness, 0 ) ) / 180 * Math.PI
+					dirIn: Math.min(
+						contours[0].nodes[0].dirOut - ( 30 * contrast - Math.max( 30 * aperture * apertureBottom - ( 30 / 80 ) * thickness, 0 ) ) / 180 * Math.PI,
+						contours[0].nodes[0].dirOut
+					)
 					typeOut: 'line'
 				2:
 					x: contours[0].nodes[0].expandedTo[0].x
