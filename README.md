@@ -1,4 +1,4 @@
-# gfnt.ptf
+# spectral.ptf
 ===========
 
-Prototypo gfnt
+The parametric version of the Google Spectral by Production Type built in Prototypo

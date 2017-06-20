@@ -1,14 +1,14 @@
 {
-  "name": "gfnt.ptf",
+  "name": "spectral.ptf",
   "version": "1.0.0",
-  "description": "gfnt Parametric Typeface",
+  "description": "The parametric version of the Google Spectral by Production Type built in Prototypo",
   "main": "dist/typeface.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/byte-foundry/gfnt.ptf.git"
+    "url": "git://github.com/byte-foundry/spectral.ptf.git"
   },
   "keywords": [
     "parametric-typeface"
@@ -16,9 +16,9 @@
   "author": "Prototypo",
   "license": "Affero GPL",
   "bugs": {
-    "url": "https://github.com/byte-foundry/gfnt.ptf/issues"
+    "url": "https://github.com/byte-foundry/spectral.ptf/issues"
   },
-  "homepage": "https://github.com/byte-foundry/gfnt.ptf",
+  "homepage": "https://github.com/byte-foundry/spectral.ptf",
   "devDependencies": {
      "gulp": "~3.8.7",
      "gulp-load-plugins": "~0.6.0",

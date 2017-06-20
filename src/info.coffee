@@ -1,7 +1,7 @@
 exports.fontinfo =
-	familyName: 'Prototypo gfnt'
+	familyName: 'Spectral'
 	version: '0.1.0'
-	description: 'A parametric typeface gfnt'
+	description: 'The parametric version of the Google Spectral by Production Type built in Prototypo'
 	tags: [
 		'all',
 		'latin',
